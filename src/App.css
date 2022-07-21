@@ -1,0 +1,443 @@
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.NavBar{
+  height: 70px;
+  background-color: #090b13;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  overflow-x: hidden;
+}
+.NavBar__Logo{
+  width: 80px;
+}
+.NavMenu{
+  display: flex;
+  align-items: center;
+}
+.NavMenu__Icon{
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+.NavMenu__Logo{
+  height: 20px;
+  padding: 0 5px;
+}
+.NavMenu__Title{
+  font-size: 13px;
+  letter-spacing: 1.3px;
+  position: relative;
+}
+.User__Img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.NavMenu__Title::after{
+  content: "";
+  background: white;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  opacity: 0;
+  transform-origin: center;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transform: scaleX(0);
+}
+.NavMenu__Icon:hover .NavMenu__Title::after{
+  transform: scaleX(1);
+  opacity: 1;
+}
+.Home__Container{
+  min-height: calc(100vh - 70px);
+  padding: 0 calc(3.5vw + 5px);
+  position: relative;
+  overflow-x: hidden;
+}
+.Home__Container::before{
+  background: url('/public/images/home-background.png') center center / cover no-repeat fixed;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.Carousel{
+  margin-top: 20px;
+}
+.Slider__Img{
+  cursor: pointer;
+  border: 4px solid transparent;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0 16px 10px -10px;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition-duration: 300ms;
+}
+.Slider__Img:hover{
+  border: 4px solid rgba(249, 249, 249, 0.8);
+  transform: scale(1.02);
+}
+.Carousel .slick-list{
+  overflow: visible;
+}
+.Carousel ul li.slick-active button::before{
+  color: white;
+}
+.Carousel ul li button::before{
+  font-size: 10px;
+  color: white;
+}
+.Carousel button{
+  z-index: 1;
+}
+.Viewers__Container{
+  margin-top: 30px;
+  display: grid;
+  padding: 30px 0 26px;
+  grid-gap: 25px;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+}
+.Viewers__Wrap{
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid rgba(249, 249, 249, 0.1);
+  box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px, rgb(0 0 0 / 73%) 0 16px 10px -10px;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+.Viewers__Wrap:hover{
+  box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px, rgb(0 0 0 / 73%) 0 16px 10px -10px;
+  transform: scale(1.05);
+  border-color: rgba(249, 249, 249, 0.8);
+}
+.Viewers__Wrap:hover .Viewers__Video{
+  opacity: 1;
+}
+.Viewers__Img{
+  inset: 0px;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  position: relative;
+  transition: opacity 500ms ease-in-out 0s;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+.Viewers__Video{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+  z-index: 0;
+}
+.Movies__Content{
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  margin-bottom: 50px;
+}
+.Movies__Wrap{
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+  border: 3px solid rgba(249, 249, 249, 0.1);
+  box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px, rgb(0 0 0 / 73%) 0 16px 10px -10px;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+.Movies__Wrap:hover{
+  transform: scale(1.05);
+  border-color: rgba(249, 249, 249, 0.8);
+  box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px, rgb(0 0 0 / 73%) 0 16px 10px -10px;
+}
+.Movies__Img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.Detail__Container{
+  min-height: calc(100vh - 110px);
+  padding: 0 calc(3.5vw + 5px);
+  position: relative;
+}
+.Detail__Background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.8;
+}
+.Detail__Img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Detail__Title{
+  height: 30vh;
+  min-height: 170px;
+  width: 35vw;
+  min-width: 200px;
+  margin: 40px 0;
+}
+.Title__Img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.Controls{
+  display: flex;
+  align-items: center;
+}
+.PlayButton{
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 0 24px;
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background: rgb(249, 249, 249);
+  border: none;
+  letter-spacing: 1.8px;
+}
+.PlayButton:hover{
+  background: rgb(198, 198, 198);
+}
+.TrailerButton{
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 0 24px;
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid white;
+  letter-spacing: 1.8px;
+  color: rgb(249, 249, 249);
+}
+.TrailerButton:hover{
+  background: rgb(70, 70, 70);
+}
+.AddButton{
+  margin-right: 16px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 30px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.3);
+}
+.GroupWatchButton{
+  margin-right: 16px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 30px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background-color: rgb(0,0,0);
+}
+.Detail__Subtitle{
+  color: rgb(249, 249, 249);
+  font-size: 15px;
+  min-height: 20px;
+  margin-top: 26px;
+}
+.Detail__Description{
+  line-height: 1.4;
+  font-size: 20px;
+  margin-top: 16px;
+  letter-spacing: 1.2px;
+  color: rgb(249, 249, 249);
+  max-width: 500px;
+}
+.Login__Container{
+  position: relative;
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.Login__Container::before{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/public/images/login-background.jpg");
+  z-index: -1;
+  opacity: 0.7;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.CTA{
+  max-width: 650px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Login__SignUp{
+  width: 100%;
+  background-color: #0063e5;
+  font-weight: bold;
+  padding: 17px 0;
+  color: #f9f9f9;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 250ms;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.Login__SignUp:hover{
+  background: #0483ee;
+}
+.Login__Description{
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  line-height: 1.5;
+}
+.CTA__Logo2{
+  width: 90%;
+}
+.Login__Button{
+  border: 1px solid #f9f9f9;
+  padding: 8px 16px;
+  border-radius: 4px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: rgba(0,0,0,0.6);
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+.Login__Button:hover{
+  background-color: #f9f9f9;
+  color: #000;
+  border-color: transparent;
+}
+.User__Signout {
+  position: absolute;
+  top: 60px;
+  right: 20px;    
+  background-color: crimson;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: 1;
+}
+.User__Signout:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+.User__Img:hover ~ .User__Signout {
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+@media screen and (max-width:550px) {
+  .NavBar{
+    padding: 0 10px;
+  }
+  .NavBar__Logo{
+    width: 60px;
+  }
+  .NavMenu{
+    display: none;
+  }
+  .Viewers__Container{
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .Movies__Content{
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .Detail__Description{
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .PlayButton{
+    margin-right: 12px;
+    font-size: 12px;
+    padding: 8px 8px;
+    height: 44px;
+  }
+  .TrailerButton{
+    margin-right: 12px;
+    font-size: 12px;
+    padding: 8px 8px;
+    height: 44px;
+  }
+}
+@media screen and (max-width:920px) {
+  .NavMenu__Title{
+    display: none;
+  }
+  .NavMenu__Logo{
+    height: 25px;
+  }
+}
+@media screen and (max-width:1050px) {
+  .NavBar{
+    padding: 0 18px;
+  }
+  .NavMenu__Icon{
+    margin: 8px;
+  }
+  .NavMenu__Logo{
+    padding: 2px;
+  }
+  .NavMenu__Title{
+    font-size: 14px;
+  }
+  .Movies__Content{
+    grid-gap: 15px;
+  }
+  .Viewers__Container{
+    grid-gap: 10px;
+  }
+}
